@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding:0;
+  }
+
+body {
+  font-family: "Gabarito", sans-serif;
+  font-optical-sizing: auto;
+  
+}
+.navbar{
+    padding:10px;
+    display:flex;
+    justify-content: space-between;
+    border-bottom: solid black 1px;
+    gap:10px;
+    /*to align the items in center in same line bcoz in section3 the alignment is in down & to control the whole block to align we using center*/
+    align-items: center;
+    /*to stick the nav bar while we scroll our page*/
+    position: sticky;
+    top:0px;
+    /*position sticky so tat need to set bgcolor otherwise it looks transparent*/
+    background-color: white;
+    z-index: 1;
+}
+.navbar__s1__title{
+    color: #A435F0;
+}
+.navbar__s2{
+    padding: 10px;
+    border: solid black 1px;
+    border-radius: 30px;
+    width:60%;
+    /*As of input width is 100%  the search bar and text comes in two different lines ..so to align on same row we using flex*/
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    
+    
+}
+.navbar__s2 input{
+    border: none;
+    width:100%;
+    font-size:15px;
+    /* while using poosition sticky the input box have the white color bckgrund*/
+    background-color: transparent;
+}
+.navbar__s2 input:focus{
+    outline:none;
+}
+.navbar__s3{
+    display: flex;
+      gap:20px;
+      align-items: center;
+}
+.nav__s4{
+    display: none;
+}
+/*my learning popup*/
+.mylearning{
+    position: relative;
+    cursor: pointer;
+}
+.mylearning__popup{
+    position: absolute;
+    width: 100px;
+    background-color: white;
+    border: solid black 1px;
+    top:150%;
+    padding:20px;
+    right: 0;
+    display: none;
+}
+.mylearning:hover .mylearning__popup{
+  display: block;
+}
+
+.category{
+    display: flex;
+    justify-content: space-around;
+    padding:10px;
+    border-bottom: solid black 1px;
+    margin-top: 5px;   
+    align-items: center; 
+   
+}
+.category__s1{
+    background-color: #A435F0;
+    color: white;
+    border-radius: 15px;
+    padding: 5px;
+    cursor: pointer;
+    border: solid #A435F0 2px;
+}
+.category p:hover{
+    transition: 1s;
+    background-color: transparent;
+    color: black;
+    border: solid #A435F0 2px;
+}
+.sale-img img{
+    width:100%;
+}
+.sale-img{
+    position: relative;
+}
+.sale-img__offers{
+    position: absolute;
+    width:35%;
+    border: solid black 2px;
+    padding:2%;
+    background-color: white;
+   top:10%;
+   left: 6%;
+   animation-name:zoom;
+   animation-duration: 2s;
+   /* transparent will become 0  */
+   opacity: 0;
+   /* to remind in that same state after opacity become 1 we need to give.otherwise it will goes to opacity 0 */
+   animation-fill-mode: forwards;
+   
+}
+@keyframes zoom {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+      /* transparent will become visible when opacity is 1  */
+    opacity: 1;
+  }
+    
+}
+
+.recommended{
+    padding: 10px;
+}
+.course-card{
+   flex-grow: 1;
+   flex-basis:20%;
+  margin-left: 5px;
+}
+.course-card img{
+    width:100%;
+    height: 50%;
+}
+.recommended__container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: wrap;
+
+}
+.topics{
+    padding: 10px;
+   
+    
+}
+
+.topics__container {
+   display: flex;
+   gap:10px;
+   flex-wrap: wrap;
+   margin-top: 10px;;
+   
+}
+.topics__container p{
+    padding:10px;
+    border: solid grey 1px;
+    flex-grow: 1;
+    flex-basis:25%;
+}
+.popular{
+    padding: 10px;
+}
+.popular__container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+    
+.footer__one{
+   display: flex;
+   gap:20px;
+}
+.footer__two{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+
+ }
+ .footer{
+    padding: 30px;
+    background-color: black;
+    color: white;
+ }
+.footer__one p{
+    margin-top: 20px;
+}
+/* Media queries */
+@media screen and (max-width:800px) {
+    body{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:600px) {
+    .course-card{
+       flex-basis:40%;
+       
+     }
+     .category{
+        display: none;
+     }
+     .navbar__s2,.navbar__s3{
+        display: none;
+     }
+.nav__s4{
+   display: block;
+}
+.sale-img__offers p{
+   display: none;
+}
+}
